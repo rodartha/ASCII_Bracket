@@ -114,6 +114,9 @@
     <ClCompile Include="Driver.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Basic_Text.h" />
+    <ClInclude Include="Bye.h" />
+    <ClInclude Include="Entry_Type.h" />
     <ClInclude Include="Errors_and_help.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

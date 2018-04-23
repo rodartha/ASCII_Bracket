@@ -25,8 +25,8 @@ using namespace std;
 // UPDATE:
 
 // FIXME
-const string VALID_TYPES[1] = {"hello"};
-const int NUM_TYPES = 0;
+const string VALID_TYPES[2] = {"Basic Text", "Song"};
+const int NUM_TYPES = 2;
 
 void help()
 {

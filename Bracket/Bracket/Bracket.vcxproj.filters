@@ -23,5 +23,14 @@
     <ClInclude Include="Errors_and_help.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Entry_Type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Bye.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Basic_Text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
