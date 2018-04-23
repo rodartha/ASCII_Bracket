@@ -11,8 +11,9 @@
 * This File holds the driver for the bracket function:
 */
 
-#include <iostream>
 #include <string>
+
+#include "Errors_and_help.h"
 
 // Handles finding getopt.h on linux and windows
 #if defined(__GNUC__)
@@ -24,21 +25,6 @@
 #endif
 
 using namespace std;
-
-/**
-* TODO: prints help message and exits with code 0
-*/
-void help();
-
-/**
-* TODO: prints info message and exits with code 0
-*/
-void info();
-
-/**
-* TODO: prints error message for incorrect argument usage, exits with code 1
-*/
-void incorrect_args();
 
 int main(int argc, char** argv)
 {
@@ -105,26 +91,4 @@ int main(int argc, char** argv)
     }
 
     return 0;
-}
-
-void help()
-{
-    // FIXME: fill with helpful info lol
-
-    exit(0);
-}
-
-void info()
-{
-    // FIXME: add info about the program
-
-    exit(0);
-}
-
-void incorrect_args()
-{
-    cerr << "Error: usage: [OPTIONAL]-h/--help [OPTIONAL]-i/--info [REQUIRED]-t/--type"
-        << " <type_of_obj_in_bracket> [REQUIRED]-f/--file <name_of_file.txt> \n";
-
-    exit(1);
 }
