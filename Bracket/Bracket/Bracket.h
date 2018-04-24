@@ -59,6 +59,42 @@ private:
     // Reads the file into Entries:
     void read_file()
     {
+        string file_ending = filename.substr(filename.size() - 4);
+
+        if (file_ending != ".txt")
+        {
+            cerr << "Error: The file input was not a .txt file\n";
+            exit(EXIT_FAILURE);
+        }
+
+        ifstream fin;
+        fin.open(filename);
+
+        if (!fin.is_open())
+        {
+            cerr << "Error opening file " << filename << "\n";
+            exit(EXIT_FAILURE);
+        }
+
+        if (entry_type == Type_of_Entry::Basic_Text)
+        {
+            read_file_Basic_Text(fin);
+        }
+        else if (entry_type == Type_of_Entry::Song)
+        {
+            read_file_Song(fin);
+        }
+    }
+
+    void read_file_Basic_Text(ifstream &fin)
+    {
+
+    }
+
+
+    // TODO: make/fix
+    void read_file_Song(ifstream &fin)
+    {
 
     }
 };

@@ -143,7 +143,7 @@ void incorrect_args()
     cerr << "Error: usage: [OPTIONAL]-h/--help [OPTIONAL]-i/--info [REQUIRED]-t/--type"
         << " <type_of_obj_in_bracket> [REQUIRED]-f/--file <name_of_file.txt> \n";
 
-    exit(1);
+    exit(EXIT_FAILURE);
 }
 
 #endif
