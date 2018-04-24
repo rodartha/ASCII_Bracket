@@ -128,8 +128,13 @@ void help()
 
 void info()
 {
-    // FIXME: add info about the program
-
+    cout << "ASCII BRACKET by Colin Page \n";
+    cout << "A program designed to make brackets out of .txt files to settle disputes, \n";
+    cout << "Contact author: cwpage@umich.edu\n";
+    cout << "Version: " << VERSION << '\n';
+    cout << "Last Edited: " << DATE_LAST_UPDATE << '\n';
+    cout << "I hope you enjoy the program :) \n";
+    cout << "\nProgram exiting\n";
     exit(0);
 }
 
