@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/23/18
+* Last Edited: 4/24/18
 *
 * This file holds functions that handle error commands as well as the functions that handle
 * the help and info messages from the command line.
@@ -23,10 +23,10 @@ using namespace std;
 
 // CONSTANT VALUES
 // UPDATE:
-
-// FIXME
-const string VALID_TYPES[2] = {"Basic Text", "Song"};
+const string VALID_TYPES[2] = {"Basic_Text", "Song"};
 const int NUM_TYPES = 2;
+const double VERSION = 0.0;
+const string DATE_LAST_UPDATE = "4/24/18";
 
 char command_help(int help_choice)
 {
@@ -56,8 +56,11 @@ char command_help(int help_choice)
         cout << "This is a REQUIRED command that should be followed by the name of a text file\n";
         cout << "that holds the elements that will be placed into the bracket. The file must be entered\n";
         cout << "as follows: [file_name.txt] (minus the brackets). Within the file itself, the format\n";
-        // FIXME: add format explanation + defintion:
         cout << "should be: \n";
+        cout << "Basic_Text: each line, regardless of content will become a single bracket entry\n";
+        cout << "Song: Each line will be one bracket entry and each line should be in the form: song_name - artist_name\n";
+        cout << "For all: If an element is supposed to have a 'Bye Week' or a free pass out of the first\n";
+        cout << "Round of voting, the line should contain just 'BYE' \n";
         break;
     default:
         cout << "You broke my program, nice! :) \n";
