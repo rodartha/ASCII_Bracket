@@ -88,7 +88,40 @@ private:
 
     void read_file_Basic_Text(ifstream &fin)
     {
+        string line_text;
+        int num_elements = 0;
 
+        while (getline(fin, line_text))
+        {
+            Bracket_Place b;
+
+            // Determines whether its a top half of bracket or bottom
+            if (num_elements % 2 == 0)
+            {
+                b = Bracket_Place::Top;
+            }
+            else
+            {
+                b = Bracket_Place::Bottom;
+            }
+
+            if (line_text == "BYE")
+            {
+                Entries.push_back(new Bye(b));
+            }
+            else
+            {
+                Entries.push_back(new Basic_Text(line_text, b));
+            }
+
+            num_elements++;
+        }
+
+        // If odd need to end final bye week:
+        if (num_elements % 2 == 0)
+        {
+            Entries.push_back(new Bye(Bracket_Place::Top));
+        }
     }
 
 
