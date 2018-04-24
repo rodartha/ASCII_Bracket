@@ -21,15 +21,38 @@
 class Bye : public Entry_Type
 {
 public:
-    Bye() { }
+    Bye() : Bye(Bracket_Place::Top) { }
 
-    // FIXME:
-    virtual friend std::ostream &operator<<(std::ostream &out, Bye &b)
+    Bye(Bracket_Place p) : place(p) { }
+
+    virtual Bracket_Place get_bracket_place()
     {
-        return out << "Bye\n";
+        return place;
+    }
+
+    virtual void set_bracket_place(Bracket_Place p)
+    {
+        place = p;
+    }
+
+    virtual friend std::ostream &operator<<(std::ostream &out, const Bye &b)
+    {
+        out << " _____";
+        if (get_bracket_place() == Bracket_Place::Bottom)
+        {
+            out << '/';
+        }
+        out << "\n< Bye >\n -----";
+        if (get_bracket_place() == Bracket_Place::Top)
+        {
+            out << '\\';
+        }
+        return out;
     }
 
     virtual ~Bye() {}
+private:
+    Bracket_Place place;
 };
 
 #endif

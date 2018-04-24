@@ -28,46 +28,6 @@ using namespace std;
 const string VALID_TYPES[2] = {"Basic Text", "Song"};
 const int NUM_TYPES = 2;
 
-void help()
-{
-    cout << "This program takes in a file, creates a bracket from the file and\n";
-    cout << "allows a user to then vote on items in the bracket until there is a\n";
-    cout << "winner. The command line arguments taken by this program are listed below:\n\n";
-    cout << "1) -h/--help\n";
-    cout << "2) -i/--info\n";
-    cout << "3) -t/--type <type_of_obj>\n";
-    cout << "4) -f/--file <file_of_bracket>\n";
-    cout << "To learn about any command specifically please enter a number corresponding\n";
-    cout << "with its number on the list. If you are done and wish to restart the program\n";
-    cout << "please enter [d]\n";
-
-    int user_input;
-    cin >> user_input;
-
-    while (user_input != 'd' && user_input != 'm')
-    {
-        if (user_input == 1 || user_input == 2 || user_input == 3 || user_input == 4)
-        {
-            user_input = command_help(user_input);
-        }
-        else
-        {
-            cout << "The only valid options are: 1, 2, 3, 4, or 'd'\n Please try again: ";
-            cin >> user_input;
-        }
-    }
-
-    if (user_input == 'd')
-    {
-        cout << "Program exiting\n";
-        exit(0);
-    }
-    else if (user_input == 'm')
-    {
-        help();
-    }
-}
-
 char command_help(int help_choice)
 {
     switch (help_choice)
@@ -117,6 +77,48 @@ char command_help(int help_choice)
 
     return user_input;
 }
+
+void help()
+{
+    cout << "This program takes in a file, creates a bracket from the file and\n";
+    cout << "allows a user to then vote on items in the bracket until there is a\n";
+    cout << "winner. The command line arguments taken by this program are listed below:\n\n";
+    cout << "1) -h/--help\n";
+    cout << "2) -i/--info\n";
+    cout << "3) -t/--type <type_of_obj>\n";
+    cout << "4) -f/--file <file_of_bracket>\n";
+    cout << "To learn about any command specifically please enter a number corresponding\n";
+    cout << "with its number on the list. If you are done and wish to restart the program\n";
+    cout << "please enter [d]\n";
+
+    int user_input;
+    cin >> user_input;
+
+    while (user_input != 'd' && user_input != 'm')
+    {
+        if (user_input == 1 || user_input == 2 || user_input == 3 || user_input == 4)
+        {
+            user_input = command_help(user_input);
+        }
+        else
+        {
+            cout << "The only valid options are: 1, 2, 3, 4, or 'd'\n Please try again: ";
+            cin >> user_input;
+        }
+    }
+
+    if (user_input == 'd')
+    {
+        cout << "Program exiting\n";
+        exit(0);
+    }
+    else if (user_input == 'm')
+    {
+        help();
+    }
+}
+
+
 
 void info()
 {

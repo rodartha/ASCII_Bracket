@@ -17,12 +17,35 @@
 
 #include <iostream>
 
+enum class Bracket_Place 
+{
+    Bottom,
+    Top
+};
+
 class Entry_Type
 {
 public:
+    Entry_Type(Bracket_Place p) : place(p) {}
+
+    Entry_Type() : Entry_Type(Bracket_Place::Top) {}
+
+    virtual Bracket_Place get_bracket_place()
+    {
+        return place;
+    }
+
+    virtual void set_bracket_place(Bracket_Place p)
+    {
+        place = p;
+    }
+
     virtual friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { }
     
     virtual ~Entry_Type() {}
+
+private:
+    Bracket_Place place;
 };
 
 #endif
