@@ -60,7 +60,10 @@ char command_help(int help_choice)
         cout << "Basic_Text: each line, regardless of content will become a single bracket entry\n";
         cout << "Song: Each line will be one bracket entry and each line should be in the form: song_name - artist_name\n";
         cout << "For all: If an element is supposed to have a 'Bye Week' or a free pass out of the first\n";
-        cout << "Round of voting, the line should contain just 'BYE' \n";
+        cout << "round of voting, the line should contain just 'BYE' \n";
+        cout << "Additional note: Since brackets are made in groups of two, if the file has an odd number\n";
+        cout << "of elements, the final element will automatically be given a bye. Additionally, keep this in mind\n";
+        cout << "when creating the brackets so elements get properly matched with each other.\n";
         break;
     default:
         cout << "You broke my program, nice! :) \n";

@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/23/18
+* Last Edited: 4/24/18
 *
 * This file holds the class Bye, a subclass of Entry_Type meant to
 * represent an empty spot in the bracket in which a "competitor" has a
@@ -52,6 +52,7 @@ public:
 
     virtual ~Bye() {}
 private:
+    // Keeps track of whether top or bottom half of bracket entry
     Bracket_Place place;
 };
 

@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/23/18
+* Last Edited: 4/24/18
 *
 * This file holds the class Basic_Text, a subclass of Entry_Type meant to
 * represent any basic form of text entered into the bracket, These 
@@ -63,6 +63,7 @@ public:
     virtual ~Basic_Text() {}
 private:
     std::string text;
+    // Keeps track of whether top or bottom half of bracket entry
     Bracket_Place place;
 };
 

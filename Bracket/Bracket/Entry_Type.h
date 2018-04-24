@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/23/18
+* Last Edited: 4/24/18
 *
 * This file holds the abstract class entry type from which all specific
 * Entry type classes are derived
@@ -45,6 +45,7 @@ public:
     virtual ~Entry_Type() {}
 
 private:
+    // Keeps track of whether top or bottom half of bracket entry
     Bracket_Place place;
 };
 
