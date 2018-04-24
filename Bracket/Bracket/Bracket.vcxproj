@@ -122,6 +122,9 @@
     <ClInclude Include="Errors_and_help.h" />
     <ClInclude Include="getopt.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Fruit.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

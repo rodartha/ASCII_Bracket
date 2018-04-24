@@ -28,21 +28,21 @@ const int NUM_TYPES = 2;
 const double VERSION = 0.0;
 const string DATE_LAST_UPDATE = "4/24/18";
 
-char command_help(int help_choice)
+char command_help(char help_choice)
 {
     switch (help_choice)
     {
-    case 1:
+    case '1':
         cout << "-h/--help \n";
         cout << "This is an OPTIONAL command that allows the user to access the help\n";
         cout << "menu should they need help understanding other argument options\n";
         break;
-    case 2:
+    case '2':
         cout << "-i/--info \n";
         cout << "This is an OPTIONAL command that allows the user to access the info\n";
         cout << "menu that provides information about the program\n";
         break;
-    case 3:
+    case '3':
         cout << "-t/--type \n";
         cout << "This is a REQUIRED command that should be followed by a type that defines\n";
         cout << "what type of objects the bracket will consist of. The current valid types are:\n";
@@ -51,7 +51,7 @@ char command_help(int help_choice)
             cout << i << ") " << VALID_TYPES[i] << "\n";
         }
         break;
-    case 4:
+    case '4':
         cout << "-f/--file \n";
         cout << "This is a REQUIRED command that should be followed by the name of a text file\n";
         cout << "that holds the elements that will be placed into the bracket. The file must be entered\n";
@@ -73,13 +73,15 @@ char command_help(int help_choice)
 
     char user_input;
     cout << "\nYou may now either enter 'd' to exit the program or 'm' to return\n"
-        << "to the main menu:\n ";
+        << "to the main menu:\n";
     cin >> user_input;
+    cout << '\n';
 
     while (user_input != 'd' && user_input != 'm')
     {
         "Error, your answer was neither 'd' nor 'm', please try again: ";
         cin >> user_input;
+        cout << '\n';
     }
 
     return user_input;
@@ -98,12 +100,13 @@ void help()
     cout << "with its number on the list. If you are done and wish to restart the program\n";
     cout << "please enter [d]\n";
 
-    int user_input;
+    char user_input;
     cin >> user_input;
+    cout << '\n';
 
     while (user_input != 'd' && user_input != 'm')
     {
-        if (user_input == 1 || user_input == 2 || user_input == 3 || user_input == 4)
+        if (user_input == '1' || user_input == '2' || user_input == '3' || user_input == '4')
         {
             user_input = command_help(user_input);
         }
@@ -111,6 +114,7 @@ void help()
         {
             cout << "The only valid options are: 1, 2, 3, 4, or 'd'\n Please try again: ";
             cin >> user_input;
+            cout << '\n';
         }
     }
 
@@ -123,6 +127,8 @@ void help()
     {
         help();
     }
+
+    return;
 }
 
 
