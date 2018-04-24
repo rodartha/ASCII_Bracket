@@ -71,8 +71,8 @@ char command_help(int help_choice)
     }
 
     char user_input;
-    cout << "You may now either enter 'd' to exit the program or 'm' to return\n"
-        << "to the main menu: ";
+    cout << "\nYou may now either enter 'd' to exit the program or 'm' to return\n"
+        << "to the main menu:\n ";
     cin >> user_input;
 
     while (user_input != 'd' && user_input != 'm')

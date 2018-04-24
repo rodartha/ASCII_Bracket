@@ -1,5 +1,3 @@
 ﻿  Driver.cpp
-c:\users\rodartha\documents\github\ascii_bracket\bracket\bracket\driver.cpp(35): warning C4018: '<': signed/unsigned mismatch
-c:\users\rodartha\documents\github\ascii_bracket\bracket\bracket\driver.cpp(41): warning C4018: '<': signed/unsigned mismatch
   Bracket.vcxproj -> C:\Users\Rodartha\Documents\GitHub\ASCII_Bracket\Bracket\Debug\Bracket.exe
   Bracket.vcxproj -> C:\Users\Rodartha\Documents\GitHub\ASCII_Bracket\Bracket\Debug\Bracket.pdb (Partial PDB)

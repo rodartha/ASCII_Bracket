@@ -35,15 +35,15 @@ public:
         place = p;
     }
 
-    virtual friend std::ostream &operator<<(std::ostream &out, const Bye &b)
+    friend std::ostream &operator<<(std::ostream &out, const Bye &b)
     {
         out << " _____";
-        if (get_bracket_place() == Bracket_Place::Bottom)
+        if (b.place == Bracket_Place::Bottom)
         {
             out << '/';
         }
         out << "\n< Bye >\n -----";
-        if (get_bracket_place() == Bracket_Place::Top)
+        if (b.place == Bracket_Place::Top)
         {
             out << '\\';
         }

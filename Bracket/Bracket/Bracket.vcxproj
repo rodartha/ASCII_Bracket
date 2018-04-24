@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Basic_Text.h" />
+    <ClInclude Include="Bracket.h" />
     <ClInclude Include="Bye.h" />
     <ClInclude Include="Entry_Type.h" />
     <ClInclude Include="Errors_and_help.h" />

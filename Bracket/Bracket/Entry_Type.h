@@ -40,7 +40,7 @@ public:
         place = p;
     }
 
-    virtual friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { }
+    friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { }
     
     virtual ~Entry_Type() {}
 

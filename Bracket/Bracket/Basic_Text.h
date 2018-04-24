@@ -35,24 +35,24 @@ public:
         place = p;
     }
 
-    virtual friend std::ostream &operator<<(std::ostream &out, const Basic_Text &b) 
+    friend std::ostream &operator<<(std::ostream &out, const Basic_Text &b) 
     {
         out << " __";
-        for (int i = 0; i < text.size(); ++i)
+        for (size_t i = 0; i < b.text.size(); ++i)
         {
             out << "_";
         }
-        if (get_bracket_place() == Bracket_Place::Bottom)
+        if (b.place == Bracket_Place::Bottom)
         {
             out << '/';
         }
-        out << "\n< " << text << " >\n";
+        out << "\n< " << b.text << " >\n";
         out << " --";
-        for (int i = 0; i < text.size(); ++i)
+        for (size_t i = 0; i < b.text.size(); ++i)
         {
             out << "-";
         }
-        if (get_bracket_place() == Bracket_Place::Top)
+        if (b.place == Bracket_Place::Top)
         {
             out << '\\';
         }
