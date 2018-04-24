@@ -14,6 +14,7 @@
 #include <string>
 
 #include "Errors_and_help.h"
+#include "Bracket.h"
 
 // Handles finding getopt.h on linux and windows
 #if defined(__GNUC__)
@@ -89,6 +90,21 @@ int main(int argc, char** argv)
             incorrect_args();
         }
     }
+
+    Type_of_Entry t;
+
+    // Update as new types come out:
+    if (type == "Basic_Text")
+    {
+        t = Type_of_Entry::Basic_Text;
+    }
+    else if (type == "Song")
+    {
+        t = Type_of_Entry::Song;
+    }
+
+    Bracket b(file, t);
+    b.run_bracket();
 
     return 0;
 }
