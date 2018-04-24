@@ -54,6 +54,7 @@ public:
 private:
     vector <Entry_Type*> Entries;
     string filename;
+    string title;
     Type_of_Entry entry_type;
 
     // Reads the file into Entries:
@@ -75,6 +76,19 @@ private:
             cerr << "Error opening file " << filename << "\n";
             exit(EXIT_FAILURE);
         }
+
+        char quotation;
+        fin >> quotation;
+        if (quotation != '\"')
+        {
+            cerr << "Title is not formatted properly, should be formatted: \"Title\" [NEW LINE]\n";
+            exit(EXIT_FAILURE);
+        }
+
+        // Grabs the title of the bracket
+        getline(fin, title, '\"');
+        string empty_end_of_line;
+        getline(fin, empty_end_of_line);
 
         if (entry_type == Type_of_Entry::Basic_Text)
         {

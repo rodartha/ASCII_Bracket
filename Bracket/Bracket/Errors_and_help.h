@@ -57,6 +57,7 @@ char command_help(int help_choice)
         cout << "that holds the elements that will be placed into the bracket. The file must be entered\n";
         cout << "as follows: [file_name.txt] (minus the brackets). Within the file itself, the format\n";
         cout << "should be: \n";
+        cout << "First a title for the bracket on its own line surrounded by quotations Ex. \"Title\" \n";
         cout << "Basic_Text: each line, regardless of content will become a single bracket entry\n";
         cout << "Song: Each line will be one bracket entry and each line should be in the form: song_name - artist_name\n";
         cout << "For all: If an element is supposed to have a 'Bye Week' or a free pass out of the first\n";
