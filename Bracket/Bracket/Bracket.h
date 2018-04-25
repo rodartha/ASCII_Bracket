@@ -31,6 +31,13 @@ enum class Type_of_Entry
     Song
 };
 
+enum class Winner
+{
+    Top,
+    Bottom,
+    Undecided
+};
+
 class Bracket
 {
 public:
@@ -102,13 +109,6 @@ public:
 
     }
 
-    void print_header()
-    {
-        cout << "::: " << title << " Bracket :::\n";
-        cout << "Elements left in bracket: " << elements_left 
-             << " | Rounds left: " << rounds_left << " out of " << total_rounds << '\n';
-    }
-
     ~Bracket() 
     {
         for (size_t i = 0; i < Entries.size(); ++i)
@@ -119,6 +119,8 @@ public:
     }
 private:
     vector <Entry_Type*> Entries;
+    // Tracks what type of entry each entry is
+    vector <string> entry_tracker;
     string filename;
     string title;
     Type_of_Entry entry_type;
@@ -149,10 +151,12 @@ private:
             if (line_text == "BYE")
             {
                 Entries.push_back(new Bye(b));
+                entry_tracker.push_back("BYE");
             }
             else
             {
                 Entries.push_back(new Basic_Text(line_text, b));
+                entry_tracker.push_back("Basic_Text");
             }
 
             num_elements++;
@@ -162,12 +166,38 @@ private:
         if (!is_even(num_elements))
         {
             Entries.push_back(new Bye(Bracket_Place::Top));
+            entry_tracker.push_back("BYE");
         }
     }
 
     // TODO: make/fix
     void read_file_Song(ifstream &fin)
     {
+
+    }
+
+    void print_header()
+    {
+        cout << "::: " << title << " Bracket :::\n";
+        cout << "Elements left in bracket: " << elements_left
+            << " | Rounds left: " << rounds_left << " out of " << total_rounds << '\n';
+    }
+
+    /** index_top, index_bottom represent the index of the two bracket entries
+    * being printed
+    */
+    void print_bracket_section(const int index_top, 
+        const int index_bottom, Winner w)
+    {
+        if (entry_tracker[index_top] == "BYE")
+        {
+            w = Winner::Bottom;
+        }
+        else if (entry_tracker[index_bottom] == "BYE")
+        {
+            w = Winner::Top;
+        }
+
 
     }
 };
