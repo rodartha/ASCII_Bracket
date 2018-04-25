@@ -41,8 +41,14 @@ public:
         return static_cast<int>(text.size()) + 4;
     }
 
-    virtual std::ostream& print(std::ostream &out) 
-    { 
+    virtual ~Basic_Text() {}
+private:
+    std::string text;
+    // Keeps track of whether top or bottom half of bracket entry
+    Bracket_Place place;
+
+    virtual std::ostream& print(std::ostream &out)
+    {
         out << " __";
         for (size_t i = 0; i < text.size(); ++i)
         {
@@ -65,12 +71,6 @@ public:
         out << '\n';
         return out;
     }
-
-    virtual ~Basic_Text() {}
-private:
-    std::string text;
-    // Keeps track of whether top or bottom half of bracket entry
-    Bracket_Place place;
 };
 
 #endif

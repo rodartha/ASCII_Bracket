@@ -40,6 +40,11 @@ public:
         return 7;
     }
 
+    virtual ~Bye() {}
+private:
+    // Keeps track of whether top or bottom half of bracket entry
+    Bracket_Place place;
+
     virtual std::ostream& print(std::ostream &out)
     {
         out << " _____";
@@ -55,11 +60,6 @@ public:
         out << '\n';
         return out;
     }
-
-    virtual ~Bye() {}
-private:
-    // Keeps track of whether top or bottom half of bracket entry
-    Bracket_Place place;
 };
 
 #endif

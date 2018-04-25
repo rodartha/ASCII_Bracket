@@ -50,8 +50,6 @@ public:
         return 0;
     }
 
-    virtual std::ostream& print(std::ostream &out) { return out; }
-
     friend std::ostream& operator<<(std::ostream &out, Entry_Type &e) { return e.print(out); }
     
     virtual ~Entry_Type() {}
@@ -59,6 +57,8 @@ public:
 private:
     // Keeps track of whether top or bottom half of bracket entry
     Bracket_Place place;
+
+    virtual std::ostream& print(std::ostream &out) { return out; }
 };
 
 #endif
