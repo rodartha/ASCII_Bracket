@@ -41,7 +41,7 @@ public:
     // Main Function, handles all abilities of bracket class:
     void run_bracket()
     {
-        
+        // NOTE: need to check if a round has even elements to know if bye needed:
     }
 
     // Reads the file into Entries:
@@ -159,7 +159,7 @@ private:
         }
 
         // If odd need to end final bye week:
-        if ((num_elements % 2) != 0)
+        if (!is_even(num_elements))
         {
             Entries.push_back(new Bye(Bracket_Place::Top));
         }

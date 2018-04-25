@@ -34,4 +34,14 @@ int closest_power_of_two(int x)
     return pow(2, set_pos);
 }
 
+bool is_even(int x)
+{
+    if ((x % 2) == 0)
+    {
+        return true;
+    }
+
+    return false;
+}
+
 #endif
