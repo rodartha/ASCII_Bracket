@@ -41,28 +41,28 @@ public:
         return static_cast<int>(text.size()) + 4;
     }
 
-    friend std::ostream &operator<<(std::ostream &out, const Basic_Text &b) 
-    {
+    virtual std::ostream& print(std::ostream &out) 
+    { 
         out << " __";
-        for (size_t i = 0; i < b.text.size(); ++i)
+        for (size_t i = 0; i < text.size(); ++i)
         {
             out << "_";
         }
-        if (b.place == Bracket_Place::Bottom)
+        if (place == Bracket_Place::Bottom)
         {
             out << '/';
         }
-        out << "\n< " << b.text << " >\n";
+        out << "\n< " << text << " >\n";
         out << " --";
-        for (size_t i = 0; i < b.text.size(); ++i)
+        for (size_t i = 0; i < text.size(); ++i)
         {
             out << "-";
         }
-        if (b.place == Bracket_Place::Top)
+        if (place == Bracket_Place::Top)
         {
             out << '\\';
         }
-
+        out << '\n';
         return out;
     }
 

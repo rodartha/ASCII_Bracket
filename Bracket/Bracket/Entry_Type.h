@@ -50,7 +50,9 @@ public:
         return 0;
     }
 
-    friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { return out; }
+    virtual std::ostream& print(std::ostream &out) { return out; }
+
+    friend std::ostream& operator<<(std::ostream &out, Entry_Type &e) { return e.print(out); }
     
     virtual ~Entry_Type() {}
 

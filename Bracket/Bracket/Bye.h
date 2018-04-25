@@ -40,18 +40,19 @@ public:
         return 7;
     }
 
-    friend std::ostream &operator<<(std::ostream &out, const Bye &b)
+    virtual std::ostream& print(std::ostream &out)
     {
         out << " _____";
-        if (b.place == Bracket_Place::Bottom)
+        if (place == Bracket_Place::Bottom)
         {
             out << '/';
         }
         out << "\n< Bye >\n -----";
-        if (b.place == Bracket_Place::Top)
+        if (place == Bracket_Place::Top)
         {
             out << '\\';
         }
+        out << '\n';
         return out;
     }
 

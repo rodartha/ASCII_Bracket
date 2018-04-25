@@ -51,6 +51,11 @@ public:
         // NOTE: need to check if a round has even elements to know if bye needed:
     }
 
+    void print()
+    {
+        print_header();
+    }
+
     // Reads the file into Entries:
     void read_file()
     {
@@ -184,7 +189,8 @@ private:
     }
 
     /** index_top, index_bottom represent the index of the two bracket entries
-    * being printed
+    * being printed. If w == winner, a winner has not yet been selected, otherwise
+    * the winner is the end of the bracket denoted by w
     */
     void print_bracket_section(const int index_top, 
         const int index_bottom, Bracket_Place w)
@@ -198,6 +204,9 @@ private:
             w = Bracket_Place::Top;
         }
 
+        // TODO: continue work on this
+        cout << *(Entries[index_top]);
+        cout << *(Entries[index_bottom]);
     }
 };
 
