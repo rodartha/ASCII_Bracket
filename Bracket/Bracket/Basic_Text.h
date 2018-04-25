@@ -35,6 +35,12 @@ public:
         place = p;
     }
 
+    virtual int print_size()
+    {
+        // plus 4 for the two white space and '<>' in the print
+        return static_cast<int>(text.size()) + 4;
+    }
+
     friend std::ostream &operator<<(std::ostream &out, const Basic_Text &b) 
     {
         out << " __";

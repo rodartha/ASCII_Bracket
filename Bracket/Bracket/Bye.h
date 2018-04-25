@@ -35,6 +35,11 @@ public:
         place = p;
     }
 
+    virtual int print_size()
+    {
+        return 7;
+    }
+
     friend std::ostream &operator<<(std::ostream &out, const Bye &b)
     {
         out << " _____";

@@ -198,7 +198,6 @@ private:
             w = Bracket_Place::Top;
         }
 
-
     }
 };
 

@@ -41,7 +41,16 @@ public:
         place = p;
     }
 
-    friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { }
+    /**
+    * Returns size in characters of printed output when operator<< used
+    * to allow the Bracket class to print properly
+    */
+    virtual int print_size()
+    {
+        return 0;
+    }
+
+    friend std::ostream& operator<<(std::ostream &out, const Entry_Type &e) { return out; }
     
     virtual ~Entry_Type() {}
 
