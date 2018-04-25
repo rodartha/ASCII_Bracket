@@ -43,20 +43,6 @@ public:
         read_file();
     }
 
-    ~Bracket() 
-    {
-        for (size_t i = 0; i < Entries.size(); ++i)
-        {
-            delete Entries[i];
-            Entries[i] = nullptr;
-        }
-    }
-private:
-    vector <Entry_Type*> Entries;
-    string filename;
-    string title;
-    Type_of_Entry entry_type;
-
     // Reads the file into Entries:
     void read_file()
     {
@@ -100,6 +86,22 @@ private:
         }
     }
 
+    ~Bracket() 
+    {
+        for (size_t i = 0; i < Entries.size(); ++i)
+        {
+            delete Entries[i];
+            Entries[i] = nullptr;
+        }
+    }
+private:
+    vector <Entry_Type*> Entries;
+    string filename;
+    string title;
+    Type_of_Entry entry_type;
+    size_t total_size;
+    size_t elements_left;
+
     void read_file_Basic_Text(ifstream &fin)
     {
         string line_text;
@@ -136,8 +138,11 @@ private:
         {
             Entries.push_back(new Bye(Bracket_Place::Top));
         }
-    }
 
+        // Set the total size of the bracket and elements left in it.
+        total_size = Entries.size();
+        elements_left = total_size;
+    }
 
     // TODO: make/fix
     void read_file_Song(ifstream &fin)
