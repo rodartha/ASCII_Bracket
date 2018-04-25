@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/24/18
+* Last Edited: 4/25/18
 *
 * This file holds functions that handle error commands as well as the functions that handle
 * the help and info messages from the command line.
@@ -26,7 +26,7 @@ using namespace std;
 const string VALID_TYPES[2] = {"Basic_Text", "Song"};
 const int NUM_TYPES = 2;
 const double VERSION = 0.0;
-const string DATE_LAST_UPDATE = "4/24/18";
+const string DATE_LAST_UPDATE = "4/25/18";
 
 char command_help(char help_choice)
 {

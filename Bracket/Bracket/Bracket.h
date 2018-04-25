@@ -6,7 +6,7 @@
 * cwpage@umich.edu
 *
 * Version: 0.0
-* Last Edited: 4/24/18
+* Last Edited: 4/25/18
 *
 * This file holds the Bracket class which contains the bracket itself and
 * handles the main processes of the program.
@@ -20,6 +20,7 @@
 
 #include "Bye.h"
 #include "Basic_Text.h"
+#include "Assist_Math.h"
 
 using namespace std;
 
@@ -40,7 +41,7 @@ public:
     // Main Function, handles all abilities of bracket class:
     void run_bracket()
     {
-        read_file();
+        
     }
 
     // Reads the file into Entries:
@@ -84,6 +85,26 @@ public:
         {
             read_file_Song(fin);
         }
+
+        // Set the total size of the bracket and elements left in it.
+        total_size = Entries.size();
+        elements_left = total_size;
+
+        // Finds the number of rounds:
+        int size_rounded = static_cast<int>(total_size);
+        if (!is_power_of_two(size_rounded))
+        {
+            size_rounded = closest_power_of_two(size_rounded);
+        }
+
+        while (size_rounded != 0)
+        {
+            size_rounded = size_rounded > 1;
+            total_rounds++;
+        }
+
+        rounds_left = total_rounds;
+
     }
 
     ~Bracket() 
@@ -101,6 +122,8 @@ private:
     Type_of_Entry entry_type;
     size_t total_size;
     size_t elements_left;
+    int total_rounds;
+    int rounds_left;
 
     void read_file_Basic_Text(ifstream &fin)
     {
@@ -138,10 +161,6 @@ private:
         {
             Entries.push_back(new Bye(Bracket_Place::Top));
         }
-
-        // Set the total size of the bracket and elements left in it.
-        total_size = Entries.size();
-        elements_left = total_size;
     }
 
     // TODO: make/fix
