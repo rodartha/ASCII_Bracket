@@ -115,6 +115,7 @@
     <ClCompile Include="getopt.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Assist_Math.h" />
     <ClInclude Include="Basic_Text.h" />
     <ClInclude Include="Bracket.h" />
     <ClInclude Include="Bye.h" />

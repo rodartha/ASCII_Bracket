@@ -41,6 +41,9 @@
     <ClInclude Include="Bracket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Assist_Math.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Fruit.txt" />

@@ -85,10 +85,11 @@ int main(int argc, char** argv)
             break;
         }
 
-        if (!type_seen || !file_seen)
-        {
-            incorrect_args();
-        }
+    }
+
+    if (!type_seen || !file_seen)
+    {
+        incorrect_args();
     }
 
     Type_of_Entry t;
@@ -104,7 +105,7 @@ int main(int argc, char** argv)
     }
 
     Bracket b(file, t);
-    b.run_bracket();
+    b.read_file();
 
     return 0;
 }

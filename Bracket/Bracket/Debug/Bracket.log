@@ -1,3 +1,6 @@
 ﻿  Driver.cpp
+c:\users\rodartha\documents\github\ascii_bracket\bracket\bracket\assist_math.h(33): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\rodartha\documents\github\ascii_bracket\bracket\bracket\assist_math.h(34): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+c:\users\rodartha\documents\github\ascii_bracket\bracket\bracket\bracket.h(100): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Bracket.vcxproj -> C:\Users\Rodartha\Documents\GitHub\ASCII_Bracket\Bracket\Debug\Bracket.exe
   Bracket.vcxproj -> C:\Users\Rodartha\Documents\GitHub\ASCII_Bracket\Bracket\Debug\Bracket.pdb (Partial PDB)

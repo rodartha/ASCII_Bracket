@@ -97,14 +97,16 @@ public:
             size_rounded = closest_power_of_two(size_rounded);
         }
 
-        while (size_rounded != 0)
-        {
-            size_rounded = size_rounded > 1;
-            total_rounds++;
-        }
-
+        total_rounds = log2(size_rounded);
         rounds_left = total_rounds;
 
+    }
+
+    void print_header()
+    {
+        cout << "::: " << title << " Bracket :::\n";
+        cout << "Elements left in bracket: " << elements_left 
+             << " | Rounds left: " << rounds_left << " out of " << total_rounds << '\n';
     }
 
     ~Bracket() 
@@ -157,7 +159,7 @@ private:
         }
 
         // If odd need to end final bye week:
-        if (num_elements % 2 == 0)
+        if ((num_elements % 2) != 0)
         {
             Entries.push_back(new Bye(Bracket_Place::Top));
         }
