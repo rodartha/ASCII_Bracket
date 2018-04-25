@@ -20,7 +20,8 @@
 enum class Bracket_Place 
 {
     Bottom,
-    Top
+    Top,
+    Winner
 };
 
 class Entry_Type

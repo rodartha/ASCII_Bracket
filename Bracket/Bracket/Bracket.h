@@ -187,15 +187,15 @@ private:
     * being printed
     */
     void print_bracket_section(const int index_top, 
-        const int index_bottom, Winner w)
+        const int index_bottom, Bracket_Place w)
     {
         if (entry_tracker[index_top] == "BYE")
         {
-            w = Winner::Bottom;
+            w = Bracket_Place::Bottom;
         }
         else if (entry_tracker[index_bottom] == "BYE")
         {
-            w = Winner::Top;
+            w = Bracket_Place::Top;
         }
 
 
